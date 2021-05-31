@@ -1,0 +1,30 @@
+{
+  "name": "dumb-as-a-mug",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dumb as a Mug",
+  "author": "daleinen7",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "gatsby": "^3.4.1",
+    "gatsby-plugin-image": "^1.6.0",
+    "gatsby-plugin-sharp": "^3.6.0",
+    "gatsby-plugin-styled-components": "^4.6.0",
+    "gatsby-source-datocms": "^2.6.15",
+    "gatsby-source-filesystem": "^3.6.0",
+    "gatsby-transformer-sharp": "^3.6.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.3.0"
+  }
+}
