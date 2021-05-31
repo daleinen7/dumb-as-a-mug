@@ -21,15 +21,19 @@ const StyledHeader = styled.header`
   align-items: center;
 `;
 
-export default function Layout({children}) {
+export default function Layout({location, children}) {
+  const path = location.pathname.slice(1);
+  console.log("This is a path", path);
   return(
     <StyledHeader>
       <GlobalStyle/>
       <h1><StaticImage src='../images/DaamHeader.png' alt='Dumb as a Mug'/></h1>
       <nav>
-        <Link to='/'>Start at the Beginning</Link>
-        <Link to='/'>Random</Link>
-        <Link to='/'>Latest</Link>
+        <Link to='/0'>Start at the Beginning</Link>
+        <Link to={`/${parseInt(path) - 1}`}>Previous</Link>
+        <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
+        <Link to={`/${parseInt(path) + 1}`}>Next</Link>
+        <Link to='/99'>Latest</Link>
       </nav>
       {children}
     </StyledHeader>
