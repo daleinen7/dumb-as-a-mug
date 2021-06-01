@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: "Dumb as a Mug",
@@ -6,7 +10,7 @@ module.exports = {
     {
       resolve: "gatsby-source-datocms",
       options: {
-        apiToken: "37a70f64dd69b772143c78d2c0b010",
+        apiToken: process.env.DatoCmsKey,
       },
     },
     "gatsby-plugin-styled-components",
