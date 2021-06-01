@@ -35,11 +35,27 @@ export default function Layout({location, children}) {
       {/* <h1><StaticImage src={logo} alt='Dumb as a Mug'/></h1> */}
       <h1>Dumb as a Mug</h1>
       <nav>
-        <Link to='/0'>Start at the Beginning</Link>
-        <Link to={`/${parseInt(path) - 1}`}>Previous</Link>
-        <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
-        <Link to={`/${parseInt(path) + 1}`}>Next</Link>
-        <Link to='/99'>Latest</Link>
+        {
+          (location.pathname === '/')
+          ?
+          <>
+             <Link to='/0'>Start at the Beginning</Link>
+             <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
+             <Link to='/99'>Latest</Link>
+         </>
+         :
+         <>
+            <Link to='/0'>Start at the Beginning</Link>
+            {location.pathname !== '/1' &&
+              <Link to={`/${parseInt(path) - 1}`}>Previous</Link>
+            }
+            <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
+            {location.pathname !== '/99' &&
+              <Link to={`/${parseInt(path) + 1}`}>Next</Link>
+            }
+            <Link to='/99'>Latest</Link>
+         </>
+        }
       </nav>
       {children}
     </StyledHeader>

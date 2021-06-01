@@ -1,9 +1,9 @@
 import * as React from "react"
 import Layout from '../components/Layout';
 
-const IndexPage = () => {
+const IndexPage = ({location}) => {
   return (
-    <Layout>
+    <Layout  location={location}>
       <p>Dumb as a Mug is a webcomic that ran from 2011-2012.</p>
     </Layout>
   )
