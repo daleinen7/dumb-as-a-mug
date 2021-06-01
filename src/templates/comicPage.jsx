@@ -4,7 +4,6 @@ import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function comicPage({pageContext, location}) {
   const data = pageContext.pageContext;
-  console.log(data);
   return(
     <Layout location={location}>
       <h2>{data.title}</h2>
