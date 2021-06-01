@@ -19,6 +19,10 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  a {
+    background: url('/DaaMBtn.png');
+  }
 `;
 
 export default function Layout({location, children}) {
