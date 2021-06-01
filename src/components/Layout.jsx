@@ -1,8 +1,6 @@
 import React from 'react';
 import {Link} from 'gatsby';
-// import { StaticImage } from "gatsby-plugin-image"
 import styled, { createGlobalStyle } from 'styled-components';
-// import logo from '../images/DaaMheader.png';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,6 +21,7 @@ const StyledHeader = styled.header`
 
   a {
     background: url('/DaaMBtn.png');
+    height: 40px;
   }
 `;
 
@@ -32,8 +31,7 @@ export default function Layout({location, children}) {
   return(
     <StyledHeader>
       <GlobalStyle/>
-      {/* <h1><StaticImage src={logo} alt='Dumb as a Mug'/></h1> */}
-      <h1>Dumb as a Mug</h1>
+      <h1><img src="/DaaMHeader.png" alt="Dumb As A Mug" /></h1>
       <nav>
         {
           (location.pathname === '/')
