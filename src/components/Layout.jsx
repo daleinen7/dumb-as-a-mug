@@ -51,7 +51,7 @@ const StyledHeader = styled.header`
 
 export default function Layout({location, children}) {
   const path = location.pathname.slice(1);
-  console.log("This is a path", path);
+  console.log(children);
   return(
     <StyledHeader>
       <GlobalStyle/>
@@ -66,10 +66,10 @@ export default function Layout({location, children}) {
                <Link to='/0'>Start</Link>
              </li>
              <li style={{transform: 'rotate(-2deg)'}}>
-               <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
+               <Link to={`/${Math.floor(Math.random() * 213)}`}>Random</Link>
              </li>
              <li style={{transform: 'rotate(4deg)'}}>
-               <Link to='/99'>Last</Link>
+               <Link to='/213'>Last</Link>
              </li>
           </ul>
          </>
@@ -85,15 +85,15 @@ export default function Layout({location, children}) {
                 </li>
               }
               <li style={{transform: 'rotate(-2deg)'}}>
-                <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
+                <Link to={`/${Math.floor(Math.random() * 213)}`}>Random</Link>
               </li>
-              {location.pathname !== '/99' &&
+              {location.pathname !== '/213' &&
                 <li style={{transform: 'rotate(3deg)'}}>
                   <Link to={`/${parseInt(path) + 1}`}>Next</Link>
                 </li>
               }
               <li style={{transform: 'rotate(4deg)'}}>
-                <Link to='/99'>Last</Link>
+                <Link to='/213'>Last</Link>
               </li>
             </ul>
          </>
