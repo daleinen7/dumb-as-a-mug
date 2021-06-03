@@ -4,7 +4,7 @@ exports.createPages = async ({ actions, graphql }) => {
     query AllComics {
       allDatoCmsComic {
         nodes {
-          comic {
+          image {
             gatsbyImageData(
               width: 600,
               placeholder: BLURRED
@@ -12,13 +12,13 @@ exports.createPages = async ({ actions, graphql }) => {
           }
           id
           title
-          rolloverText
+          rollover
           post
         }
       }
     }
   `)
-  data.allDatoCmsComic.nodes.forEach((node, idx) => {
+  data.allDatoCmsComic.nodes.reverse().forEach((node, idx) => {
     console.log(data);
     actions.createPage({
       path: `/${idx}`,

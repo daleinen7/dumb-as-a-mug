@@ -7,7 +7,7 @@ export default function comicPage({pageContext, location}) {
   return(
     <Layout location={location}>
       <h2>{data.title}</h2>
-      <GatsbyImage image={data.comic.gatsbyImageData} title={data.rolloverText} alt={data.rolloverText} />
+      <GatsbyImage image={data.image.gatsbyImageData} title={data.rollover} alt={data.rollover} />
     </Layout>
   )
 }

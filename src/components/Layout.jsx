@@ -19,9 +19,16 @@ const StyledHeader = styled.header`
   flex-direction: column;
   align-items: center;
 
+  nav {
+    height: 77px;
+  }
+
   a {
     background: url('/DaaMBtn.png');
-    height: 40px;
+    background-repeat: no-repeat;
+    padding: 40px;
+    height: 77px;
+    min-width: 140px;
   }
 `;
 
