@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     margin: 0;
+    margin-bottom: -54px;
   }
 `
 
@@ -19,16 +20,32 @@ const StyledHeader = styled.header`
   flex-direction: column;
   align-items: center;
 
-  nav {
+  ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/DaaMBtn.png');
+    background-repeat: no-repeat;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     height: 77px;
+    min-width: 140px;
   }
 
   a {
-    background: url('/DaaMBtn.png');
-    background-repeat: no-repeat;
-    padding: 40px;
-    height: 77px;
-    min-width: 140px;
+    padding: 1.2rem;
+    display: block;
+    text-decoration: none;
+    color: #525029;
+    &:hover {
+      color: #DC7929;
+    }
   }
 `;
 
@@ -44,21 +61,41 @@ export default function Layout({location, children}) {
           (location.pathname === '/')
           ?
           <>
-             <Link to='/0'>Start at the Beginning</Link>
-             <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
-             <Link to='/99'>Latest</Link>
+          <ul>
+             <li style={{transform: 'rotate(3deg)'}}>
+               <Link to='/0'>Start</Link>
+             </li>
+             <li style={{transform: 'rotate(-2deg)'}}>
+               <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
+             </li>
+             <li style={{transform: 'rotate(4deg)'}}>
+               <Link to='/99'>Last</Link>
+             </li>
+          </ul>
          </>
          :
          <>
-            <Link to='/0'>Start at the Beginning</Link>
-            {location.pathname !== '/1' &&
-              <Link to={`/${parseInt(path) - 1}`}>Previous</Link>
-            }
-            <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
-            {location.pathname !== '/99' &&
-              <Link to={`/${parseInt(path) + 1}`}>Next</Link>
-            }
-            <Link to='/99'>Latest</Link>
+            <ul>
+              <li style={{transform: 'rotate(3deg)'}}>
+                <Link to='/0'>Start</Link>
+              </li>
+              {location.pathname !== '/1' &&
+                <li style={{transform: 'rotate(-1deg)'}}>
+                  <Link to={`/${parseInt(path) - 1}`}>Prev</Link>
+                </li>
+              }
+              <li style={{transform: 'rotate(-2deg)'}}>
+                <Link to={`/${Math.floor(Math.random() * 99)}`}>Random</Link>
+              </li>
+              {location.pathname !== '/99' &&
+                <li style={{transform: 'rotate(3deg)'}}>
+                  <Link to={`/${parseInt(path) + 1}`}>Next</Link>
+                </li>
+              }
+              <li style={{transform: 'rotate(4deg)'}}>
+                <Link to='/99'>Last</Link>
+              </li>
+            </ul>
          </>
         }
       </nav>
