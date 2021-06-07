@@ -20,11 +20,20 @@ const StyledHeader = styled.header`
   flex-direction: column;
   align-items: center;
 
+  img {
+    width: 100%;
+  }
+
   ul {
     list-style-type: none;
     display: flex;
-    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
     padding: 0;
+    @media(max-width: 610px) {
+      margin-top: 40px;
+    }
   }
 
   li {
@@ -34,12 +43,17 @@ const StyledHeader = styled.header`
     background: url('/DaaMBtn.png');
     background-repeat: no-repeat;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: -35px;
     height: 77px;
     min-width: 140px;
+    @media(max-width: 680px) {
+      
+    }
   }
 
   a {
-    padding: 1.2rem;
+    /* padding: 1.2rem; */
+    padding: 0;
     display: block;
     text-decoration: none;
     color: #525029;
